@@ -1,3 +1,4 @@
 *.burp
 *.burp.backup
 *.txt
+*.json
