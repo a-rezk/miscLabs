@@ -2,3 +2,4 @@
 *.burp.backup
 *.txt
 *.json
+*.vscode
