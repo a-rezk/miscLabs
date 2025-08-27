@@ -1,3 +1,9 @@
+/*
+	this expliot use to solve this ps lab:
+	https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors
+
+*/
+
 package main
 
 import (
