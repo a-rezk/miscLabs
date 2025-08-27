@@ -13,6 +13,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"sync"
 )
 
 var data []int
@@ -55,18 +56,18 @@ func brute(tURL string, t int, fast bool) {
 func main() {
 
 	// replace this with your temp lab url
-	tarURL := "https://0aff00eb04768b16806030e300e30056.web-security-academy.net/"
+	tarURL := "https://0aab006f03a174cd80a985c200740059.web-security-academy.net/"
 
 	// to run goroutine uncomment the wg and go func values!
 
-	// var wg sync.WaitGroup
+	var wg sync.WaitGroup
 	for t := 0; t < 40; t++ {
-		// wg.Add(1)
-		// go func() {
-		brute(tarURL, t, false)
-		// 	wg.Done()
-		// }()
+		wg.Add(1)
+		go func() {
+			brute(tarURL, t, true)
+			wg.Done()
+		}()
 	}
-	// wg.Wait()
+	wg.Wait()
 	defer fmt.Printf("\nlenght: %d\n", len(data))
 }
